@@ -38,6 +38,12 @@ Public Class RADIUSServer
         mSecrets = secrets
     End Sub
 
+    Friend ReadOnly Property NASList() As NASAuthList
+        Get
+            Return mSecrets
+        End Get
+    End Property
+
     Public Sub SendAsRequest(ByVal packet As RADIUSPacket)
         If packet Is Nothing Then Exit Sub
         If Not packet.IsValid Then Exit Sub
@@ -85,7 +91,7 @@ Public Class RADIUSServer
             auth = AuthenticateResponse(data, mSecrets.GetSharedSecret(ep.Address.ToString))
         End If
         If Not auth Then Exit Sub
-        Dim packet As New RADIUSPacket(data, ep)
+        Dim packet As New RADIUSPacket(data, ep, Me)
         HandlePacket(packet)
     End Sub
 
