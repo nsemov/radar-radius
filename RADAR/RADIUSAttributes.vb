@@ -1,4 +1,4 @@
-﻿'Copyright (C) 2008-2011  Nikolay Semov
+ '    Copyright (C) 2008-2012  Nikolay Semov
 
 '    This program is free software: you can redistribute it and/or modify
 '    it under the terms of the GNU General Public License as published by
@@ -72,6 +72,7 @@ Public Class RADIUSAttributes
             result = (attr.Type = type)
             If result Then Exit For
         Next
+        Return result
     End Function
 
     Public Function GetFirstAttribute(ByVal type As RadiusAttributeType) As RADIUSAttribute
