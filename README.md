@@ -6,7 +6,7 @@ This RADIUS server implementation came into being back in early 2008 after an un
 ### Structure
 At large, the project includes several modules:
 
-* core RADIUS server (nick-named RADAR) (Currently, the code only for this module is posted here.) -- a .NET library implementing RADIUS.
+* Core RADIUS server (nick-named RADAR) (Currently, the code only for this module is posted here.) -- a .NET library implementing RADIUS.
 * Call Logic module (CalLogic) -- processes RADIUS accounting requests to compose call records saved in a database. The module also processes authorization requests using a number of custom authorization schemes (used originally to communicate with custom Cisco TCL IVR scripts running against VoIP calls on Cisco IOS routers).
 * Bill Logic module (BilLogic) -- processes call records applying call rates, etc.
 * WebUI module -- Web interface allowing for the configuration of the CalLogic and BilLogic modules as well as presenting call reports.
